@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmoud Nagah — Python Backend Developer</title>
+<meta name="description" content="Mahmoud Nagah — Python backend developer in Cairo, Egypt. FastAPI, Flask, REST APIs, testing, CI/CD. Open to remote work.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #14181F;
+    --panel: #1C222C;
+    --text: #E8EAED;
+    --muted: #8B92A0;
+    --amber: #E8A33D;
+    --green: #4FBF80;
+    --border: #2A3140;
+    --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    --maxw: 800px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--bg); }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.site {
+    padding: 40px 0 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  .site-name {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .site-loc {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  nav.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+
+  nav.contact-links a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav.contact-links a:hover {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 48px 0 56px;
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  pre.response {
+    margin: 0;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 20px;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    overflow-x: auto;
+    white-space: pre;
+    tab-size: 2;
+  }
+
+  .req-line {
+    color: var(--text);
+  }
+  .req-method {
+    color: var(--amber);
+    font-weight: 600;
+  }
+  .status-line {
+    color: var(--green);
+    font-weight: 600;
+  }
+  .json-punct { color: var(--muted); }
+  .json-key { color: var(--amber); }
+  .json-string { color: var(--text); }
+
+  .hero-tagline {
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 56ch;
+  }
+
+  /* ---------- Section shell ---------- */
+
+  section.block {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section.block:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 20px;
+  }
+
+  .section-heading .tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .section-heading h2 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--amber);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .about p {
+    max-width: 62ch;
+    color: var(--text);
+    margin: 0 0 12px;
+  }
+
+  .about .status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--green);
+    margin-top: 16px;
+  }
+
+  /* ---------- Projects ---------- */
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .project {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .project-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .status-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .status-tag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--green);
+    white-space: nowrap;
+  }
+
+  .status-tag .dot {
+    display: inline-block;
+  }
+
+  .project-desc {
+    color: var(--muted);
+    margin: 10px 0 16px;
+    max-width: 64ch;
+  }
+
+  .tech-tags {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0 0 18px;
+    overflow-wrap: break-word;
+  }
+
+  .tech-tags .sep {
+    color: var(--border);
+  }
+
+  .tech-tags .tech {
+    color: var(--amber);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .project-links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 8px 14px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .project-links a:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+  }
+
+  .demo-media {
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #10141a;
+  }
+
+  .demo-media img {
+    display: block;
+    width: 100%;
+    /* demo.gif is a 1280x800 capture, but the recorded app window only fills
+       the top ~440px of that canvas — the rest is blank recording background.
+       Crop to the actual content region instead of the full asset so the
+       panel hugs the app, not the empty capture area. */
+    aspect-ratio: 1280 / 445;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .demo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 28px 20px;
+  }
+
+  .demo-placeholder p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    max-width: 46ch;
+  }
+
+  .demo-play-btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--bg);
+    background: var(--amber);
+    border: 1px solid var(--amber);
+    border-radius: 5px;
+    padding: 9px 16px;
+    cursor: pointer;
+  }
+
+  .demo-play-btn:hover {
+    filter: brightness(1.08);
+  }
+
+  .demo-caption {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ---------- More projects ---------- */
+
+  .more-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .mini-project {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
+  .mini-project-thumb-slot {
+    width: 100%;
+    height: 160px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .mini-project-thumb {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    object-fit: contain;
+    background: var(--panel);
+  }
+
+  .mini-project-thumb--framed {
+    padding: 16px;
+  }
+
+  .mini-project-thumb-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+  }
+
+  .mini-project-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .mini-project-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin: 0 0 6px;
+  }
+
+  .mini-project-desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0 0 12px;
+  }
+
+  .mini-tech-tags {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin: 0 0 12px;
+    overflow-wrap: break-word;
+  }
+
+  .mini-tech-tags .sep {
+    color: var(--border);
+  }
+
+  .mini-tech-tags .tech {
+    color: var(--amber);
+  }
+
+  .mini-project-link {
+    margin-top: auto;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-decoration: none;
+    color: var(--muted);
+    border-bottom: 1px solid transparent;
+    align-self: flex-start;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .mini-project-link:hover {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer.site {
+    padding: 32px 0 56px;
+  }
+
+  footer.site .foot-name {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  footer.site nav.contact-links {
+    margin-top: 10px;
+  }
+
+  footer.site .foot-note {
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 18px; }
+    header.site { padding-top: 28px; }
+    .hero { padding: 32px 0 40px; }
+    pre.response { font-size: 0.8rem; padding: 18px 14px; }
+    .site-top { flex-direction: column; align-items: flex-start; }
+    .project { padding: 18px; }
+    section.block { padding: 32px 0; }
+    .more-projects-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Reduced motion ---------- */
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition-duration: 0.001ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="site-top">
+      <div>
+        <div class="site-name">Mahmoud Nagah</div>
+        <div class="site-loc">Cairo, Egypt</div>
+      </div>
+      <nav class="contact-links" aria-label="Contact">
+        <a href="mailto:mahmoudnagah1993@gmail.com">mahmoudnagah1993@gmail.com</a>
+        <a href="https://github.com/Kazenubis" target="_blank" rel="noopener noreferrer">github.com/Kazenubis</a>
+        <a href="https://www.linkedin.com/in/mahmoud-nagah-936bb041b" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahmoud-nagah</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="hero-label">// request</p>
+    <pre class="response"><span class="req-line"><span class="req-method">GET</span> /mahmoud-nagah</span>
+<span class="status-line">200 OK</span>
+
+<span class="json-punct">{</span>
+  <span class="json-key">"role"</span><span class="json-punct">:</span> <span class="json-string">"Python Backend Developer"</span><span class="json-punct">,</span>
+  <span class="json-key">"based_in"</span><span class="json-punct">:</span> <span class="json-string">"Cairo, Egypt"</span><span class="json-punct">,</span>
+  <span class="json-key">"status"</span><span class="json-punct">:</span> <span class="json-string">"open_to_remote_work"</span><span class="json-punct">,</span>
+  <span class="json-key">"specialties"</span><span class="json-punct">:</span> <span class="json-punct">[</span><span class="json-string">"FastAPI"</span><span class="json-punct">, </span><span class="json-string">"Flask"</span><span class="json-punct">, </span><span class="json-string">"REST APIs"</span><span class="json-punct">, </span><span class="json-string">"testing"</span><span class="json-punct">, </span><span class="json-string">"CI/CD"</span><span class="json-punct">]</span>
+<span class="json-punct">}</span></pre>
+    <p class="hero-tagline">Computer Science graduate building a Python backend portfolio — currently seeking a remote junior Python/backend role.</p>
+  </section>
+
+  <section class="block about wrap" aria-labelledby="about-heading">
+    <div class="section-heading">
+      <span class="tag">//</span>
+      <h2 id="about-heading">about</h2>
+    </div>
+    <p>I'm a Computer Science graduate based in Cairo, Egypt, building a backend-focused portfolio around Python — FastAPI and Flask in particular. I care about clean API design, test coverage, and shipping things with CI attached, not just a demo that runs once on my machine.</p>
+    <p>Currently looking for a remote junior Python / backend engineering role.</p>
+  </section>
+
+  <section class="block projects wrap" aria-labelledby="projects-heading">
+    <div class="section-heading">
+      <span class="tag">//</span>
+      <h2 id="projects-heading">projects</h2>
+    </div>
+
+    <div class="projects-list">
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-title">Web Scraping API Service</h3>
+          <div class="status-tags">
+            <span class="status-tag"><span class="dot">●</span> live</span>
+            <span class="status-tag"><span class="dot">●</span> tests passing</span>
+          </div>
+        </div>
+        <p class="project-desc">A reusable scraping API with async request handling, an in-memory TTL cache, and API-key authentication. Ships with a full pytest suite running in CI on every push.</p>
+        <p class="tech-tags">
+          <span class="tech">FastAPI</span><span class="sep"> · </span><span class="tech">httpx</span><span class="sep"> · </span><span class="tech">BeautifulSoup4</span><span class="sep"> · </span><span class="tech">Pydantic</span><span class="sep"> · </span><span class="tech">pytest</span><span class="sep"> · </span><span class="tech">GitHub Actions</span>
+        </p>
+        <div class="project-links">
+          <a href="https://scrape-on-demand.fastapicloud.dev/docs" target="_blank" rel="noopener noreferrer">Live demo (API docs) ↗</a>
+          <a href="https://github.com/Kazenubis/Scrape-On-Demand" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3 class="project-title">Bug Tracker (Kanban)</h3>
+          <div class="status-tags">
+            <span class="status-tag"><span class="dot">●</span> tests passing</span>
+          </div>
+        </div>
+        <p class="project-desc">A full-stack Kanban board with drag-and-drop reordering via fractional positioning and a running activity log. Backed by 22 pytest tests wired into CI.</p>
+        <p class="tech-tags">
+          <span class="tech">Flask</span><span class="sep"> · </span><span class="tech">Flask-SQLAlchemy</span><span class="sep"> · </span><span class="tech">SQLite</span><span class="sep"> · </span><span class="tech">vanilla JS</span><span class="sep"> · </span><span class="tech">pytest</span><span class="sep"> · </span><span class="tech">GitHub Actions</span>
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/Kazenubis/Bug-Tracker" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        </div>
+
+        <div class="demo-media" id="demo-media">
+          <!-- populated by script below, so reduced-motion users get a click-to-play control instead of an autoplaying gif -->
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block more-projects wrap" aria-labelledby="more-projects-heading">
+    <div class="section-heading">
+      <span class="tag">//</span>
+      <h2 id="more-projects-heading">more projects</h2>
+    </div>
+
+    <div class="more-projects-grid">
+
+      <article class="mini-project">
+        <div class="mini-project-thumb-slot">
+          <img class="mini-project-thumb mini-project-thumb--framed" src="https://raw.githubusercontent.com/Kazenubis/image-watermarking/main/screenshots/main.png" alt="Image Watermarker desktop app window showing a live watermark preview" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
+        </div>
+        <div class="mini-project-body">
+          <h3 class="mini-project-title">Image Watermarker</h3>
+          <p class="mini-project-desc">Desktop GUI for stamping text watermarks onto images — live preview, adjustable opacity, five position presets computed from actual rendered text size.</p>
+          <p class="mini-tech-tags">
+            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">Pillow</span>
+          </p>
+          <a class="mini-project-link" href="https://github.com/Kazenubis/image-watermarking" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="mini-project">
+        <div class="mini-project-thumb-slot">
+          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/Analyse-and-Visualise-the-Space-Race/main/space_missions_analysis.png" alt="Charts from the space missions analysis showing launch success rates and frequency over time" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
+        </div>
+        <div class="mini-project-body">
+          <h3 class="mini-project-title">Space Missions Analysis</h3>
+          <p class="mini-project-desc">Exploratory analysis of 4,324 space launches (1957–2020) — mission success rates, cost trends, and launch frequency by organisation.</p>
+          <p class="mini-tech-tags">
+            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span><span class="sep"> · </span><span class="tech">numpy</span>
+          </p>
+          <a class="mini-project-link" href="https://github.com/Kazenubis/Analyse-and-Visualise-the-Space-Race" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="mini-project">
+        <div class="mini-project-thumb-slot">
+          <div class="mini-project-thumb-fallback" aria-hidden="true">&gt;_</div>
+        </div>
+        <div class="mini-project-body">
+          <h3 class="mini-project-title">PDF to Speech</h3>
+          <p class="mini-project-desc">Reads a PDF aloud via ElevenLabs' text-to-speech API — extracts text, splits it into sentence-safe chunks, and streams playback straight from memory.</p>
+          <p class="mini-tech-tags">
+            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">pdfplumber</span><span class="sep"> · </span><span class="tech">ElevenLabs API</span>
+          </p>
+          <a class="mini-project-link" href="https://github.com/Kazenubis/pdf-to-speech" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site wrap">
+  <div class="foot-name">Mahmoud Nagah</div>
+  <div class="site-loc">Python Backend Developer · Cairo, Egypt</div>
+  <nav class="contact-links" aria-label="Contact, footer">
+    <a href="mailto:mahmoudnagah1993@gmail.com">mahmoudnagah1993@gmail.com</a>
+    <a href="https://github.com/Kazenubis" target="_blank" rel="noopener noreferrer">github.com/Kazenubis</a>
+    <a href="https://www.linkedin.com/in/mahmoud-nagah-936bb041b" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahmoud-nagah</a>
+  </nav>
+  <p class="foot-note">Built with plain HTML, CSS &amp; JS.</p>
+</footer>
+
+<script>
+  function thumbFallback(img) {
+    var fallback = document.createElement('div');
+    fallback.className = 'mini-project-thumb-fallback';
+    fallback.setAttribute('aria-hidden', 'true');
+    fallback.textContent = '>_';
+    img.replaceWith(fallback);
+  }
+
+  (function () {
+    var mount = document.getElementById('demo-media');
+    if (!mount) return;
+
+    var gifUrl = 'https://raw.githubusercontent.com/Kazenubis/Bug-Tracker/main/assets/demo.gif';
+    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function playDemo() {
+      mount.innerHTML = '';
+      var img = document.createElement('img');
+      img.src = gifUrl;
+      img.alt = 'Animated demo of the Bug Tracker Kanban board: dragging a card between columns and the activity log updating.';
+      mount.appendChild(img);
+      var caption = document.createElement('div');
+      caption.className = 'demo-caption';
+      caption.textContent = 'demo.gif — drag-and-drop + activity log';
+      mount.appendChild(caption);
+    }
+
+    if (prefersReducedMotion) {
+      var placeholder = document.createElement('div');
+      placeholder.className = 'demo-placeholder';
+
+      var msg = document.createElement('p');
+      msg.textContent = 'Motion is reduced on your system, so this demo is paused by default.';
+      placeholder.appendChild(msg);
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'demo-play-btn';
+      btn.textContent = '▶ Play demo.gif';
+      btn.addEventListener('click', playDemo);
+      placeholder.appendChild(btn);
+
+      mount.appendChild(placeholder);
+    } else {
+      playDemo();
+    }
+  })();
+</script>
+
+</body>
+</html>
