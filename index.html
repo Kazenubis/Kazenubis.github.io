@@ -803,7 +803,33 @@
 
     </div>
 
-    <p class="more-projects-note">17 more, grouped by category — the full 25-repo portfolio is on <a href="https://github.com/Kazenubis" target="_blank" rel="noopener noreferrer">GitHub</a>:</p>
+    <p class="more-projects-note">27 more, grouped by category — the full 35-repo portfolio is on <a href="https://github.com/Kazenubis" target="_blank" rel="noopener noreferrer">GitHub</a>:</p>
+
+    <div class="category-heading">
+      <span class="tag">#</span>
+      <h3>Web Apps</h3>
+    </div>
+    <div class="category-list">
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Portfolio Devlog</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/portfolio-devlog" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A Flask blog engine writing up the process of building this very portfolio — Markdown posts, tag filtering with a live per-tag count, auto-deduplicated slugs.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">Flask</span><span class="sep"> · </span><span class="tech">SQLite</span><span class="sep"> · </span><span class="tech">markdown</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">K-Beauty QR Generator</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/kbeauty-qr-generator" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Generates UTM-tagged QR codes linking product packaging to trackable order links, single or batch mode, verified with a real QR decoder round-trip.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">Flask</span><span class="sep"> · </span><span class="tech">qrcode</span></p>
+      </article>
+
+    </div>
 
     <div class="category-heading">
       <span class="tag">#</span>
@@ -835,6 +861,24 @@
           <a class="category-item-link" href="https://github.com/Kazenubis/anime-character-network" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </div>
         <p class="category-item-desc">A from-scratch undirected graph (no networkx) with BFS, DFS, and shortest-path, mapping character relationships instead of an abstract test graph.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">N-Queens Solver</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/n-queens-solver" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A backtracking N-Queens solver with O(1) per-placement conflict checks via incremental column/diagonal sets, verified against the known solution-count sequence.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Rock-Paper-Scissors-Lizard-Spock</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/rpsls-with-stats" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">The 5-choice RPS expansion against a CPU opponent, with your win/loss/tie record persisted to disk and a win-matrix verified internally consistent.</p>
         <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
       </article>
 
@@ -871,6 +915,24 @@
         </div>
         <p class="category-item-desc">A pandas/matplotlib look at 5 years of Cairo daily temperatures — seasonal swing, yearly warming trend, and heatwave-day counts.</p>
         <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">NumPy</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Cairo Air Quality Trends</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/cairo-air-quality-trends" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A year of Cairo AQI data calibrated to real documented pollution seasons (black-cloud burning, khamsin dust storms), with rolling averages and worst/best day rankings.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">K-Beauty Sales Dashboard</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/kbeauty-sales-dashboard" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A sales dashboard for a K-beauty resale business: revenue by category/region/month and a top-5 products ranking, every number traceable back to its source rows.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
       </article>
 
     </div>
@@ -923,6 +985,15 @@
           <a class="category-item-link" href="https://github.com/Kazenubis/supplier-holiday-calendar" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </div>
         <p class="category-item-desc">Cross-references two countries' public holidays to flag multi-day supplier closures that risk shipping delays.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Crypto Price Tracker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/crypto-price-tracker" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Checks a coin watchlist against price thresholds via the CoinGecko API and logs only the moments a coin actually crosses one.</p>
         <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span></p>
       </article>
 
@@ -986,6 +1057,33 @@
         </div>
         <p class="category-item-desc">Scans requirements.txt across a portfolio of repos and flags copyleft/weak-copyleft dependencies.</p>
         <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Directory Tree Visualizer</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/directory-tree-visualizer" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Prints a folder's structure as an ASCII tree with per-directory file-count and size rollups, excluding common noise directories by default.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Snippet Manager</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/snippet-manager" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A local CLI for saving, searching, and tagging reusable code snippets in a small SQLite database — no cloud account, no browser extension.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">sqlite3</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">System Monitor</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/system-monitor" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Live CPU, memory, and disk usage in the terminal as ASCII progress bars, with peak-value tracking per metric across the session.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">psutil</span></p>
       </article>
 
     </div>
