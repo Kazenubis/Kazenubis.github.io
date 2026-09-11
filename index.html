@@ -466,6 +466,112 @@
     border-bottom-color: var(--amber);
   }
 
+  /* ---------- More projects: categorized list (the rest of the portfolio) ---------- */
+
+  .more-projects-note {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 36px 0 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .more-projects-note a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .more-projects-note a:hover {
+    color: var(--amber);
+  }
+
+  .category-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 28px 0 10px;
+  }
+
+  .category-heading .tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .category-heading h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--amber);
+    margin: 0;
+  }
+
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
+  }
+
+  .category-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .category-item-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 14px;
+  }
+
+  .category-item-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .category-item-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .category-item-link:hover {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  .category-item-desc {
+    color: var(--muted);
+    font-size: 0.83rem;
+    line-height: 1.5;
+    margin: 6px 0 8px;
+  }
+
+  .category-item-tech {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .category-item-tech .tech {
+    color: var(--amber);
+  }
+
+  .category-item-tech .sep {
+    color: var(--border);
+  }
+
   /* ---------- Footer ---------- */
 
   footer.site {
@@ -500,6 +606,7 @@
     .project { padding: 18px; }
     section.block { padding: 32px 0; }
     .more-projects-grid { grid-template-columns: 1fr; }
+    .category-list { grid-template-columns: 1fr; }
   }
 
   /* ---------- Reduced motion ---------- */
@@ -612,71 +719,15 @@
 
       <article class="mini-project">
         <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb mini-project-thumb--framed" src="https://raw.githubusercontent.com/Kazenubis/image-watermarking/main/screenshots/main.png" alt="Image Watermarker desktop app window showing a live watermark preview" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
+          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/cairo-weather-dashboard/main/screenshots/main.png" alt="Cairo-First Weather Dashboard: current conditions and a 3-day forecast in a sandy/terracotta desert palette" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
         </div>
         <div class="mini-project-body">
-          <h3 class="mini-project-title">Image Watermarker</h3>
-          <p class="mini-project-desc">Desktop GUI for stamping text watermarks onto images — live preview, adjustable opacity, five position presets computed from actual rendered text size.</p>
+          <h3 class="mini-project-title">Cairo-First Weather Dashboard</h3>
+          <p class="mini-project-desc">A Flask weather dashboard that defaults to Cairo but works for any city — current conditions plus a 3-day forecast via the free Open-Meteo API, with an automatic offline fallback.</p>
           <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">Pillow</span>
+            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Flask</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">Open-Meteo API</span>
           </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/image-watermarking" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/Analyse-and-Visualise-the-Space-Race/main/space_missions_analysis.png" alt="Charts from the space missions analysis showing launch success rates and frequency over time" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Space Missions Analysis</h3>
-          <p class="mini-project-desc">Exploratory analysis of 4,324 space launches (1957–2020) — mission success rates, cost trends, and launch frequency by organisation.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span><span class="sep"> · </span><span class="tech">numpy</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/Analyse-and-Visualise-the-Space-Race" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <div class="mini-project-thumb-fallback" aria-hidden="true">&gt;_</div>
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">PDF to Speech</h3>
-          <p class="mini-project-desc">Reads a PDF aloud via ElevenLabs' text-to-speech API — extracts text, splits it into sentence-safe chunks, and streams playback straight from memory.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">pdfplumber</span><span class="sep"> · </span><span class="tech">ElevenLabs API</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/pdf-to-speech" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/sorting-race/main/assets/demo.gif" alt="Five sorting algorithms racing on the same 40-bar array in a pygame animation" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Sorting Race</h3>
-          <p class="mini-project-desc">Five classic sorting algorithms racing side by side in a live animation, on the exact same array — backed by a comparisons/swaps benchmark and correctness tests on empty, duplicate, and reverse-sorted inputs.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">pygame-ce</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/sorting-race" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/mha-memory-match/main/assets/demo.gif" alt="MHA Memory Match: an 8-pair character/quirk board being cleared" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">MHA Memory Match</h3>
-          <p class="mini-project-desc">A memory-match game with a twist: each pair is a character and a differently-drawn item, not an identical twin, so recognizing the pairing — not just spotting two matching faces — is the actual puzzle.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">pygame-ce</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/mha-memory-match" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+          <a class="mini-project-link" href="https://github.com/Kazenubis/cairo-weather-dashboard" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
         </div>
       </article>
 
@@ -691,62 +742,6 @@
             <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Streamlit</span><span class="sep"> · </span><span class="tech">SQLite</span><span class="sep"> · </span><span class="tech">matplotlib</span>
           </p>
           <a class="mini-project-link" href="https://github.com/Kazenubis/kbeauty-routine-tracker" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/cairo-weather-trends/main/assets/seasonal_profile.png" alt="Cairo's seasonal temperature profile chart, winter lows near 9°C and summer highs above 36°C" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Cairo Weather Trend Analysis</h3>
-          <p class="mini-project-desc">A pandas/matplotlib look at 5 years of Cairo daily temperatures — the seasonal swing from mild winters to brutal summer highs, a yearly warming trend, and how often summer crosses 40°C.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">NumPy</span><span class="sep"> · </span><span class="tech">matplotlib</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/cairo-weather-trends" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <div class="mini-project-thumb-fallback" aria-hidden="true">&gt;_</div>
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Anime Character Relationship Network</h3>
-          <p class="mini-project-desc">A from-scratch undirected graph (adjacency list, no networkx) with BFS, DFS, and shortest-path, mapping a My Hero Academia character relationship map instead of an abstract test graph.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/anime-character-network" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <div class="mini-project-thumb-fallback" aria-hidden="true">&gt;_</div>
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Anime News Aggregator</h3>
-          <p class="mini-project-desc">Pulls news for several shows from the Jikan API and merges them into one digest, with keyword filtering, deduping, and an automatic offline fallback the instant a live request fails.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">Jikan API</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/anime-news-aggregator" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
-        </div>
-      </article>
-
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <img class="mini-project-thumb" src="https://raw.githubusercontent.com/Kazenubis/cairo-weather-dashboard/main/screenshots/main.png" alt="Cairo-First Weather Dashboard: current conditions and a 3-day forecast in a sandy/terracotta desert palette" loading="lazy" width="480" height="300" onerror="thumbFallback(this)">
-        </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Cairo-First Weather Dashboard</h3>
-          <p class="mini-project-desc">A Flask weather dashboard that defaults to Cairo but works for any city — current conditions plus a 3-day forecast via the free Open-Meteo API, with an automatic offline fallback.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">Flask</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">Open-Meteo API</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/cairo-weather-dashboard" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
         </div>
       </article>
 
@@ -806,18 +801,191 @@
         </div>
       </article>
 
-      <article class="mini-project">
-        <div class="mini-project-thumb-slot">
-          <div class="mini-project-thumb-fallback" aria-hidden="true">&gt;_</div>
+    </div>
+
+    <p class="more-projects-note">17 more, grouped by category — the full 25-repo portfolio is on <a href="https://github.com/Kazenubis" target="_blank" rel="noopener noreferrer">GitHub</a>:</p>
+
+    <div class="category-heading">
+      <span class="tag">#</span>
+      <h3>Games &amp; Algorithms</h3>
+    </div>
+    <div class="category-list">
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">MHA Memory Match</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/mha-memory-match" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </div>
-        <div class="mini-project-body">
-          <h3 class="mini-project-title">Supplier Holiday Calendar</h3>
-          <p class="mini-project-desc">Cross-references two countries' public holiday calendars to flag the multi-day supplier closures that actually cause shipping delays, via the free Nager.Date API.</p>
-          <p class="mini-tech-tags">
-            <span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">Nager.Date API</span>
-          </p>
-          <a class="mini-project-link" href="https://github.com/Kazenubis/supplier-holiday-calendar" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a>
+        <p class="category-item-desc">A memory-match game where each pair is a character and a differently-drawn item, not an identical twin — recognizing the pairing is the actual puzzle.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pygame-ce</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Sorting Race</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/sorting-race" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </div>
+        <p class="category-item-desc">Five classic sorting algorithms racing side by side on the same array, backed by a comparisons/swaps benchmark and edge-case correctness tests.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pygame-ce</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Anime Character Relationship Network</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/anime-character-network" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A from-scratch undirected graph (no networkx) with BFS, DFS, and shortest-path, mapping character relationships instead of an abstract test graph.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+    </div>
+
+    <div class="category-heading">
+      <span class="tag">#</span>
+      <h3>Data Analysis &amp; ML</h3>
+    </div>
+    <div class="category-list">
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Space Missions Analysis</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/Analyse-and-Visualise-the-Space-Race" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Exploratory analysis of 4,324 space launches (1957–2020): mission success rates, cost trends, and launch frequency by organisation.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span><span class="sep"> · </span><span class="tech">numpy</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">MHA Stats Analyzer</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/mha-stats-analyzer" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Pandas-based leaderboards, growth tracking, and trend charts over a fan-curated MHA Class 1-A stat sheet across five story arcs.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Cairo Weather Trend Analysis</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/cairo-weather-trends" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">A pandas/matplotlib look at 5 years of Cairo daily temperatures — seasonal swing, yearly warming trend, and heatwave-day counts.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">pandas</span><span class="sep"> · </span><span class="tech">NumPy</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
+      </article>
+
+    </div>
+
+    <div class="category-heading">
+      <span class="tag">#</span>
+      <h3>Automation, APIs &amp; Desktop Tools</h3>
+    </div>
+    <div class="category-list">
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Image Watermarker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/image-watermarking" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Desktop GUI for stamping text watermarks onto images — live preview, adjustable opacity, five position presets from actual rendered text size.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">Pillow</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">PDF to Speech</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/pdf-to-speech" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Reads a PDF aloud via ElevenLabs' text-to-speech API — extracts text, splits it into sentence-safe chunks, and streams playback from memory.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">Tkinter</span><span class="sep"> · </span><span class="tech">pdfplumber</span><span class="sep"> · </span><span class="tech">ElevenLabs API</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Anime News Aggregator</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/anime-news-aggregator" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Pulls news for several shows from the Jikan API and merges them into one digest, with keyword filtering and an offline fallback.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">Jikan API</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Portfolio Activity Dashboard</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/portfolio-activity-dashboard" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Pulls weekly commit stats across an entire GitHub portfolio and charts combined activity, with an offline fallback.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span><span class="sep"> · </span><span class="tech">matplotlib</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Supplier Holiday Calendar</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/supplier-holiday-calendar" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Cross-references two countries' public holidays to flag multi-day supplier closures that risk shipping delays.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span></p>
+      </article>
+
+    </div>
+
+    <div class="category-heading">
+      <span class="tag">#</span>
+      <h3>CLI Tools &amp; Dev Utilities</h3>
+    </div>
+    <div class="category-list">
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">K-Beauty Restock Tracker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/kbeauty-restock-tracker" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">SQLite-backed CLI tracking resale inventory: stock levels, per-product low-stock thresholds, and restock history.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">sqlite3</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Portfolio Env Checker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/portfolio-env-checker" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">.env vs .env.example validator that can scan an entire portfolio of projects at once, catching missing/extra/typo'd vars.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">K-Beauty Catalog Converter</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/kbeauty-catalog-converter" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Converts supplier catalogs between flat CSV (one row per SKU) and nested JSON (variants grouped under one product).</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Changelog Generator</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/changelog-generator" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Parses a repo's Conventional Commits git log into a grouped CHANGELOG.md, one section per release tag.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">GitPython</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Uptime Checker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/uptime-checker" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Pings a watchlist of URLs and logs only status transitions, so a long outage produces one alert, not one line per check.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">requests</span></p>
+      </article>
+
+      <article class="category-item">
+        <div class="category-item-head">
+          <h4 class="category-item-title">Portfolio License Checker</h4>
+          <a class="category-item-link" href="https://github.com/Kazenubis/portfolio-license-checker" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </div>
+        <p class="category-item-desc">Scans requirements.txt across a portfolio of repos and flags copyleft/weak-copyleft dependencies.</p>
+        <p class="category-item-tech"><span class="tech">Python</span><span class="sep"> · </span><span class="tech">standard library only</span></p>
       </article>
 
     </div>
